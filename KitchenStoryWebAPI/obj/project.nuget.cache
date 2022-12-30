@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fF4CsQ/ZArQ76Ge4EmdtCjrRx39AnlA+ydGNHS9/UHh4NmPTDXIoqz9Bg5C5kt1N74/H5ZkLj4TxtdtOCVKD9Q==",
+  "success": true,
+  "projectFilePath": "C:\\KitchenStoryGitRepository\\KitchenStory\\KitchenStoryWebAPI\\KitchenStoryWebAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Unthinkable\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

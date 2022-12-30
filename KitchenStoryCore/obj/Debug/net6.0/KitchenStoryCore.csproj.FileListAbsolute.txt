@@ -1,0 +1,12 @@
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\bin\Debug\net6.0\KitchenStoryCore.deps.json
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\bin\Debug\net6.0\KitchenStoryCore.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\bin\Debug\net6.0\KitchenStoryCore.pdb
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.csproj.AssemblyReference.cache
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.AssemblyInfoInputs.cache
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.AssemblyInfo.cs
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.csproj.CoreCompileInputs.cache
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\refint\KitchenStoryCore.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\KitchenStoryCore.pdb
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryCore\obj\Debug\net6.0\ref\KitchenStoryCore.dll

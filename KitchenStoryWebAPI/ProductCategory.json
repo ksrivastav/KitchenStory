@@ -1,0 +1,32 @@
+[
+  {
+    "ProductCategoryId": 1,
+    "Name": "Shoes",
+    "Description": "Shoes for all needs",
+      "tags":  "shoes"
+  },
+  {
+    "ProductCategoryId": 2,
+    "Name": "Sandals",
+    "Description": "Shoes for all needs",
+    "tags": "shoes"
+  },
+  {
+    "ProductCategoryId": 3,
+    "Name": "slip ons",
+    "Description": "Shoes for all needs",
+    "tags": "shoes"
+  },
+  {
+    "ProductCategoryId": 4,
+    "Name": "Test Prod Cat1",
+    "Description": "Shoes for all needs",
+    "tags": "shoes"
+  },
+  {
+    "ProductCategoryId": 5,
+    "Name": "Test Prod Cat2",
+    "Description": "Shoes for all needs",
+    "tags": "shoes"
+  }
+]

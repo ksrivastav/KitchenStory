@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenStoryWebAPI", "KitchenStoryWebAPI.csproj", "{58B2495A-2171-4E8A-93C3-A0226D4D08CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenStoryCore", "..\KitchenStoryCore\KitchenStoryCore.csproj", "{A2F6B3B7-254A-424E-B112-AAE0775016D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenStoryInfrastructure", "..\KitchenStoryInfrastructure\KitchenStoryInfrastructure.csproj", "{87981914-F74A-488E-950A-0748430F2176}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{58B2495A-2171-4E8A-93C3-A0226D4D08CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58B2495A-2171-4E8A-93C3-A0226D4D08CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58B2495A-2171-4E8A-93C3-A0226D4D08CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F6B3B7-254A-424E-B112-AAE0775016D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F6B3B7-254A-424E-B112-AAE0775016D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F6B3B7-254A-424E-B112-AAE0775016D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F6B3B7-254A-424E-B112-AAE0775016D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87981914-F74A-488E-950A-0748430F2176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87981914-F74A-488E-950A-0748430F2176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87981914-F74A-488E-950A-0748430F2176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87981914-F74A-488E-950A-0748430F2176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

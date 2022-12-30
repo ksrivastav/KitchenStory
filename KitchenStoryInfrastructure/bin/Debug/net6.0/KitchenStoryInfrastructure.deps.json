@@ -612,6 +612,9 @@
         }
       },
       "KitchenStoryCore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1"
+        },
         "runtime": {
           "KitchenStoryCore.dll": {}
         }

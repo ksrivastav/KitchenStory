@@ -1,6 +1,10 @@
+using KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts;
+using KitchenStoryCore.CoreServices.Services.ProductCategoryServices;
+using KitchenStoryCore.Repository.ProductCategoryRepo;
 using KitchenStoryInfrastructure.Data;
 using KitchenStoryInfrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using KitchenStoryInfrastructure.Repositories.ProductCategoryRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +19,10 @@ builder.Services.AddDbContext<KitchenStory_DbContext>(options => {
     
     });
 
+
+builder.Services.Add(new ServiceDescriptor(typeof(IProductCategoryGetRepository), typeof(ProductCategoryGetRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IProductCategoryGetService), typeof(ProductCategoryGetService), ServiceLifetime.Transient));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

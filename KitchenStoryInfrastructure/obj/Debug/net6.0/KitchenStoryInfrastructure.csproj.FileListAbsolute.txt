@@ -4,7 +4,6 @@ C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\n
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\KitchenStoryInfrastructure.AssemblyInfo.cs
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\KitchenStoryInfrastructure.csproj.CoreCompileInputs.cache
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\bin\Debug\net6.0\KitchenStoryInfrastructure.deps.json
-C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\bin\Debug\net6.0\KitchenStoryInfrastructure.runtimeconfig.json
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\bin\Debug\net6.0\KitchenStoryInfrastructure.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\bin\Debug\net6.0\KitchenStoryInfrastructure.pdb
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\bin\Debug\net6.0\KitchenStoryCore.dll
@@ -13,5 +12,4 @@ C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\n
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\KitchenStoryInfrastructure.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\refint\KitchenStoryInfrastructure.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\KitchenStoryInfrastructure.pdb
-C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\KitchenStoryInfrastructure.genruntimeconfig.cache
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryInfrastructure\obj\Debug\net6.0\ref\KitchenStoryInfrastructure.dll

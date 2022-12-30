@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KitchenStoryCore.DomainModel
 {
-   public  class OrderDetails
+   public  class OrderDetail
     {
 		[Key]
 		[Display(Name = "Orderdetails")]

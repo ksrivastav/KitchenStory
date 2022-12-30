@@ -11,7 +11,7 @@ namespace KitchenStoryCore.DomainModel
     public class Order
     {
 		[Key]
-		[Display(Name = "Order")]
+		//[Display(Name = "Order")]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int OrderId{ get; set; }
 		//public User user{ get; set; }

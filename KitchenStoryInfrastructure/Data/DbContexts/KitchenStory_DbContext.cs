@@ -18,7 +18,19 @@ namespace KitchenStoryInfrastructure.Data.DbContexts
 
         }
 
+        
+        public virtual DbSet<Brand> brands { get; set; }
+        public virtual DbSet<City> cities { get; set; }
+        public virtual DbSet<Country> countries { get; set; }
+        public virtual DbSet<Order> orders { get; set; }
+        public virtual DbSet<OrderAddress> orderAddressess { get; set; }
+        public virtual DbSet<OrderContactDetail> orderContactDetails { get; set; }
+        public virtual DbSet<OrderDetail> orderDetails { get; set; }
+        public virtual DbSet<Product> products { get; set; }
         public virtual DbSet<ProductCategory> productCategories { get; set; }
+
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

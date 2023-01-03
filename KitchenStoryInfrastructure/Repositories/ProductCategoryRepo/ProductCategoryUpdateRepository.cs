@@ -20,19 +20,19 @@ namespace KitchenStoryInfrastructure.Repositories.ProductCategoryRepo
             this.kitchenStoryDb_Context = kitchenStoryDb_Context;
         }
 
-        public ProductCategory updateSingleItem(ProductCategory ProductCategory, IProductCategoryGetRepository productCategoryGetRepository)
+        public async Task<ProductCategory> updateSingleItem(ProductCategory ProductCategory, IProductCategoryGetRepository productCategoryGetRepository)
         {
             try
             {
 
-                ProductCategory updatedProductCategory = productCategoryGetRepository.getSingleItem(ProductCategory.ProductCategoryId);
+                ProductCategory updatedProductCategory = await productCategoryGetRepository.getSingleItem(ProductCategory.ProductCategoryId);
                 if (updatedProductCategory != null)
                 {
                     updatedProductCategory.Name = ProductCategory.Name;
                     updatedProductCategory.tags = ProductCategory.tags;
                     updatedProductCategory.Description = ProductCategory.Description;
                     kitchenStoryDb_Context.SaveChanges();
-                    updatedProductCategory = productCategoryGetRepository.getSingleItem(ProductCategory.ProductCategoryId);
+                    updatedProductCategory = await productCategoryGetRepository.getSingleItem(ProductCategory.ProductCategoryId);
                     return updatedProductCategory;
                 }
                 else

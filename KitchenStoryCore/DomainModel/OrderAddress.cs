@@ -15,13 +15,14 @@ namespace KitchenStoryCore.DomainModel
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderAddressId { get; set; }
         public virtual Order Order { get; set; }
-        public string AddressLine1;
-        public string AddressLine2;
-        public string PinCode;
-        public virtual City City { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string PinCode { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
 
-        
 
-        
+
+
     }
 }

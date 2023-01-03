@@ -34,9 +34,9 @@ namespace KitchenStoryCore.CoreServices.Services.ProductCategoryServices
             return ProductCategoryList;
 
         }
-        public ProductCategory getSingleItem(int id)
+        public async Task<ProductCategory> getSingleItem(int id)
         {
-            ProductCategory productCategory = prodCatGetRepository.getSingleItem(id);
+            ProductCategory productCategory = await prodCatGetRepository.getSingleItem(id);
 
             return productCategory;
         }

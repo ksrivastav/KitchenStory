@@ -25,7 +25,7 @@ namespace KitchenStoryCore.DomainModel
 		public String Image{ get; set; }
 		public string Gender { get; set; }
 		
-		public  virtual ProductCategory ProductCategory { get; set; }
+		public  virtual ProductSubCategory ProductSubCategory { get; set; }
 		public  virtual Brand brand { get; set; }
 		
 

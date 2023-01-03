@@ -45,7 +45,7 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     b.HasKey("BrandId");
 
-                    b.ToTable("brands");
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.City", b =>
@@ -132,7 +132,7 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("orders");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderAddress", b =>
@@ -143,35 +143,47 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderAddressId"));
 
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
+                    b.Property<string>("AddressLine1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressLine2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderAddressId");
+                    b.Property<string>("PinCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("CityId");
+                    b.HasKey("OrderAddressId");
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("orderAddressess");
+                    b.ToTable("OrderAddresss");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderContactDetail", b =>
                 {
-                    b.Property<int>("OrderContactDetailsId")
+                    b.Property<int>("OrderContactDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderContactDetailsId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderContactDetailId"));
 
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DeliveryAddressOrderAddressId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -185,11 +197,14 @@ namespace KitchenStoryInfrastructure.Migrations2
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("OrderContactDetailsId");
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("DeliveryAddressOrderAddressId");
+                    b.HasKey("OrderContactDetailId");
 
-                    b.ToTable("orderContactDetails");
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderContactDetails");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderDetail", b =>
@@ -224,7 +239,7 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("orderDetails");
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.Product", b =>
@@ -260,7 +275,7 @@ namespace KitchenStoryInfrastructure.Migrations2
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("ProductCategoryId")
+                    b.Property<int>("ProductSubCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Tag")
@@ -274,7 +289,7 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     b.HasIndex("BrandId");
 
-                    b.HasIndex("ProductCategoryId");
+                    b.HasIndex("ProductSubCategoryId");
 
                     b.ToTable("products");
                 });
@@ -301,7 +316,7 @@ namespace KitchenStoryInfrastructure.Migrations2
 
                     b.HasKey("ProductCategoryId");
 
-                    b.ToTable("Productcategory", (string)null);
+                    b.ToTable("ProductCategory", (string)null);
 
                     b.HasData(
                         new
@@ -341,6 +356,36 @@ namespace KitchenStoryInfrastructure.Migrations2
                         });
                 });
 
+            modelBuilder.Entity("KitchenStoryCore.DomainModel.ProductSubCategory", b =>
+                {
+                    b.Property<int>("ProductSubCategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductSubCategoryId"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("tags")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductSubCategoryId");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.ToTable("ProductSubCategory", (string)null);
+                });
+
             modelBuilder.Entity("KitchenStoryCore.DomainModel.City", b =>
                 {
                     b.HasOne("KitchenStoryCore.DomainModel.Country", "Country")
@@ -354,32 +399,24 @@ namespace KitchenStoryInfrastructure.Migrations2
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderAddress", b =>
                 {
-                    b.HasOne("KitchenStoryCore.DomainModel.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("KitchenStoryCore.DomainModel.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("City");
-
                     b.Navigation("Order");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderContactDetail", b =>
                 {
-                    b.HasOne("KitchenStoryCore.DomainModel.OrderAddress", "DeliveryAddress")
+                    b.HasOne("KitchenStoryCore.DomainModel.Order", "Order")
                         .WithMany()
-                        .HasForeignKey("DeliveryAddressOrderAddressId")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DeliveryAddress");
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("KitchenStoryCore.DomainModel.OrderDetail", b =>
@@ -409,6 +446,19 @@ namespace KitchenStoryInfrastructure.Migrations2
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("KitchenStoryCore.DomainModel.ProductSubCategory", "ProductSubCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductSubCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductSubCategory");
+
+                    b.Navigation("brand");
+                });
+
+            modelBuilder.Entity("KitchenStoryCore.DomainModel.ProductSubCategory", b =>
+                {
                     b.HasOne("KitchenStoryCore.DomainModel.ProductCategory", "ProductCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryId")
@@ -416,8 +466,6 @@ namespace KitchenStoryInfrastructure.Migrations2
                         .IsRequired();
 
                     b.Navigation("ProductCategory");
-
-                    b.Navigation("brand");
                 });
 #pragma warning restore 612, 618
         }

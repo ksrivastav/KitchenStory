@@ -9,7 +9,7 @@ namespace KitchenStoryCore.Repository.ProductCategoryRepo
 {
     public interface IProductCategoryUpdateRepository
     {
-        ProductCategory updateSingleItem(ProductCategory ProductCategory, IProductCategoryGetRepository productCategoryGetRepository);
+        Task<ProductCategory> updateSingleItem(ProductCategory ProductCategory, IProductCategoryGetRepository productCategoryGetRepository);
 
 
     }

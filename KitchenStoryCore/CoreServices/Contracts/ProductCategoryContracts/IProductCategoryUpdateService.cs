@@ -9,7 +9,7 @@ namespace KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts
 {
     public interface IProductCategoryUpdateService
     {
-        ProductCategory updateSingleItem(ProductCategory ProductCategory, IProductCategoryGetService productCategoryGetRepository);
+        Task<ProductCategory> updateSingleItem(ProductCategory ProductCategory);
 
 
     }

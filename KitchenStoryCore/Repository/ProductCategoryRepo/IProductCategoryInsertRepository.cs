@@ -9,7 +9,7 @@ namespace KitchenStoryCore.Repository.ProductCategoryRepo
 {
     public interface IProductCategoryInsertRepository
     {
-        int insertSingleItem(ProductCategory ProductCategory);
+         Task<int> insertSingleItem(ProductCategory ProductCategory);
 
     }
 }

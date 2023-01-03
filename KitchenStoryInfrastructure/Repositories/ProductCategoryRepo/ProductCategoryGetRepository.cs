@@ -30,12 +30,9 @@ namespace KitchenStoryInfrastructure.Repositories.ProductCategoryRepo
             return ProductCategoryList;
         }
 
-        public ProductCategory getSingleItem(int id)
+        public async Task<ProductCategory> getSingleItem(int id)
         {
-            ProductCategory ProductCategory = KitchenStory_DbContext.productCategories.First(p => p.ProductCategoryId == id);
-
-
-
+            ProductCategory ProductCategory = await KitchenStory_DbContext.productCategories.FirstAsync<ProductCategory>(p => p.ProductCategoryId == id);
             return ProductCategory;
         }
         //public List<ProductCategory> GetProductCategories()

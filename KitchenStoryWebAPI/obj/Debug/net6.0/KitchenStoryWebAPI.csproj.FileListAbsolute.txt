@@ -12,8 +12,13 @@ C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Ki
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\KitchenStoryWebAPI.runtimeconfig.json
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\KitchenStoryWebAPI.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\KitchenStoryWebAPI.pdb
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Azure.Core.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Azure.Identity.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Humanizer.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
@@ -90,5 +95,3 @@ C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\obj\Debug\net6.0\re
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\obj\Debug\net6.0\KitchenStoryWebAPI.pdb
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\obj\Debug\net6.0\KitchenStoryWebAPI.genruntimeconfig.cache
 C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\obj\Debug\net6.0\ref\KitchenStoryWebAPI.dll
-C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\AutoMapper.dll
-C:\KitchenStoryGitRepository\KitchenStory\KitchenStoryWebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

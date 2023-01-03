@@ -19,14 +19,15 @@ namespace KitchenStoryInfrastructure.Data.DbContexts
         }
 
         
-        public virtual DbSet<Brand> brands { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<City> cities { get; set; }
         public virtual DbSet<Country> countries { get; set; }
-        public virtual DbSet<Order> orders { get; set; }
-        public virtual DbSet<OrderAddress> orderAddressess { get; set; }
-        public virtual DbSet<OrderContactDetail> orderContactDetails { get; set; }
-        public virtual DbSet<OrderDetail> orderDetails { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderAddress> OrderAddresss { get; set; }
+        public virtual DbSet<OrderContactDetail> OrderContactDetails { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> products { get; set; }
+        public virtual DbSet<ProductSubCategory> productSubCategories { get; set; }
         public virtual DbSet<ProductCategory> productCategories { get; set; }
 
 
@@ -39,7 +40,8 @@ namespace KitchenStoryInfrastructure.Data.DbContexts
             {
                 List<ProductCategory> prodcatList = System.Text.Json.JsonSerializer.Deserialize<List<ProductCategory>>(prodCat);
                 base.OnModelCreating(modelBuilder);
-                modelBuilder.Entity<ProductCategory>().ToTable("Productcategory");
+                modelBuilder.Entity<ProductCategory>().ToTable("ProductCategory");
+                modelBuilder.Entity<ProductSubCategory>().ToTable("ProductSubCategory");
                 foreach (var item in prodcatList)
                 {
                     modelBuilder.Entity<ProductCategory>().HasData(item);

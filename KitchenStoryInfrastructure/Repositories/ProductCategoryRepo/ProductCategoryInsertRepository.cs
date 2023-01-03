@@ -19,10 +19,10 @@ namespace KitchenStoryInfrastructure.Repositories.ProductCategoryRepo
             this.kitchenStoryDb_Context = kitchenStoryDb_Context;
 
         }
-        public int insertSingleItem(KitchenStoryCore.DomainModel.ProductCategory ProductCategory)
+        public async Task<int> insertSingleItem(KitchenStoryCore.DomainModel.ProductCategory ProductCategory)
         {
             kitchenStoryDb_Context.productCategories.Add(ProductCategory);
-            int id = kitchenStoryDb_Context.SaveChanges();
+            int id = await kitchenStoryDb_Context.SaveChangesAsync();
             return id;
         }
     }

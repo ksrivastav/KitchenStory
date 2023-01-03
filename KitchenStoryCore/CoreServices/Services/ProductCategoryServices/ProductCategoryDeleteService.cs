@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using KitchenStoryCore.DomainModel;
+using KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts;
 
 namespace KitchenStoryCore.CoreServices.Services.ProductCategoryServices
 {
-    public class ProductCategoryDeleteService
+    public class ProductCategoryDeleteService : IProductCategoryDeleteService
     {
         IProductCategoryDeleteRepository prodCatDeleteRepository;
-        private readonly ILogger<ProductCategoryGetService> logger;
+        private readonly ILogger<ProductCategoryDeleteService> logger;
         DbContextOptions options;
 
-        public ProductCategoryDeleteService(DbContextOptions options, ILogger<ProductCategoryGetService> logger, IProductCategoryDeleteRepository prodCatDeleteRepository)
+        public ProductCategoryDeleteService(DbContextOptions options, ILogger<ProductCategoryDeleteService> logger, IProductCategoryDeleteRepository prodCatDeleteRepository)
         {
             this.options = options;
             this.logger = logger;
@@ -25,7 +26,7 @@ namespace KitchenStoryCore.CoreServices.Services.ProductCategoryServices
         }
 
 
-        public void deleteSingleItem(ProductCategory targetProductCategory)
+        public  void deleteSingleItem(ProductCategory targetProductCategory)
         {
             prodCatDeleteRepository.deleteSingleItem(targetProductCategory);
         }

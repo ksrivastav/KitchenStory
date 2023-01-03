@@ -9,7 +9,7 @@ namespace KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts
 {
     public interface IProductCategoryInsertService
     {
-        int insertSingleItem(ProductCategory ProductCategory);
+        Task<int> insertSingleItem(ProductCategory ProductCategory);
 
     }
 }

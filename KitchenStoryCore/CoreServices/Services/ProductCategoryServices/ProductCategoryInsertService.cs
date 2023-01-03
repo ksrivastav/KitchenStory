@@ -33,9 +33,9 @@ namespace KitchenStoryCore.CoreServices.Services.ProductCategoryServices
 
         //}
 
-        public int insertSingleItem(ProductCategory ProductCategory)
+        public async Task<int> insertSingleItem(ProductCategory ProductCategory)
         {
-            int id = prodCatInsertRepository.insertSingleItem(ProductCategory);
+            int id = await prodCatInsertRepository.insertSingleItem(ProductCategory);
             return id;
         }
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using KitchenStoryCore.DomainModel;
-using KitchenStoryWebAPI.DTO;
+using KitchenStoryWebAPI.DTO.ProductCategory;
+
 namespace KitchenStoryWebAPI.Profiles
 {
     public class ProductCategoryProfile: Profile
@@ -8,8 +9,10 @@ namespace KitchenStoryWebAPI.Profiles
         public ProductCategoryProfile() {
             CreateMap<ProductCategory, ProductCategoryDTO>()
                 .ReverseMap();
+            CreateMap<ProductCategory, ProductCategoryInsertRequest>()
+             .ReverseMap();
                 //.ForMember(dest => dest.tags, options => options.MapFrom(src => src.tags));
-        
+
         }
     }
 }

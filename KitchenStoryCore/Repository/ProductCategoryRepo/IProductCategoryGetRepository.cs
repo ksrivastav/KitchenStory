@@ -12,6 +12,6 @@ namespace KitchenStoryCore.Repository.ProductCategoryRepo
         Task<IEnumerable<ProductCategory>> getAllItem();
         //T getSingleItem(string a, string b);
 
-        ProductCategory getSingleItem(int id);
+        Task<ProductCategory> getSingleItem(int id);
     }
 }

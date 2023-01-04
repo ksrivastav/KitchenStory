@@ -4,10 +4,13 @@ using KitchenStoryCore.CoreServices.Contracts.BrandContracts;
 using KitchenStoryCore.DomainModel;
 using AutoMapper;
 using KitchenStoryWebAPI.DTO.Brand;
+using Microsoft.AspNetCore.Authorization;
+
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class BrandController : Controller
     {
         private readonly IBrandGetService BrandGetService;

@@ -5,12 +5,14 @@ using KitchenStoryCore.DomainModel;
 using AutoMapper;
 using KitchenStoryWebAPI.DTO.OrderAddress;
 using KitchenStoryCore.CoreServices.Contracts.OrderContracts;
+using Microsoft.AspNetCore.Authorization;
 //using KitchenStoryCore.CoreServices.Contracts.OrderAddressContracts;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class OrderAddressController : Controller
     {
         private readonly IOrderAddressGetService OrderAddressGetService;

@@ -8,11 +8,13 @@ using KitchenStoryCore.CoreServices.Contracts.BrandContracts;
 using KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts;
 using KitchenStoryCore.CoreServices.Contracts.ProductSubCategoryContracts;
 using KitchenStoryInfrastructure.Repositories.BrandRepo;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductGetService productGetService;

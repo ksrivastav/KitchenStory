@@ -4,11 +4,13 @@ using KitchenStoryCore.CoreServices.Contracts.OrderContracts;
 using KitchenStoryCore.DomainModel;
 using AutoMapper;
 using KitchenStoryWebAPI.DTO.Order;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderGetService OrderGetService;

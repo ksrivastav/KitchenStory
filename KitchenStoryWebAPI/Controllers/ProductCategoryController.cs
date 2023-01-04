@@ -4,11 +4,13 @@ using KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts;
 using KitchenStoryCore.DomainModel;
 using AutoMapper;
 using KitchenStoryWebAPI.DTO.ProductCategory;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ProductCategoryController : Controller
     {
         private readonly IProductCategoryGetService productCategoryGetService;

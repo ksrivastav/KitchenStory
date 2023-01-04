@@ -6,11 +6,13 @@ using KitchenStoryCore.DomainModel;
 using AutoMapper;
 using KitchenStoryWebAPI.DTO.ProductSubCategory;
 using KitchenStoryCore.CoreServices.Contracts.ProductCategoryContracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ProductSubCategoryController : Controller
     {
         private readonly IProductSubCategoryGetService ProductSubCategoryGetService;

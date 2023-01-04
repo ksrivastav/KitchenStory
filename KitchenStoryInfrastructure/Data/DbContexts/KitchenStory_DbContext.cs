@@ -12,7 +12,7 @@ namespace KitchenStoryInfrastructure.Data.DbContexts
 {
     public class KitchenStory_DbContext : DbContext
     {
-        public KitchenStory_DbContext (DbContextOptions options):base(options)
+        public KitchenStory_DbContext (DbContextOptions<KitchenStory_DbContext> options):base(options)
         {
 
 

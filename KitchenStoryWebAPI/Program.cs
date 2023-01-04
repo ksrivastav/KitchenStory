@@ -38,11 +38,19 @@ using KitchenStoryCore.Repository.OrderDetailRepo;
 using KitchenStoryInfrastructure.Repositories.OrderDetailRepo;
 
 
-
+using KitchenStoryCore.DomainModel;
 using KitchenStoryCore.CoreServices.Contracts.OrderAddressContracts;
 using KitchenStoryCore.CoreServices.Services.OrderAddressServices;
 using KitchenStoryCore.Repository.OrderAddressRepo;
 using KitchenStoryInfrastructure.Repositories.OrderAddressRepo;
+
+
+
+using KitchenStoryCore.CoreServices.Contracts.UserContracts;
+using KitchenStoryCore.CoreServices.Services.UserServices;
+using KitchenStoryCore.Repository.UserRepo;
+using KitchenStoryInfrastructure.Repositories.UserRepo;
+
 
 
 using KitchenStoryInfrastructure.Data;
@@ -50,6 +58,12 @@ using KitchenStoryInfrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
+using System.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +77,11 @@ builder.Services.AddDbContext<KitchenStory_DbContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("KitchenStoryDbConnectionString"));
     
     });
+
+builder.Services.AddDbContext<KitchenStory_UserDBContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("KitchenStoryDbConnectionString"));
+
+});
 
 
 builder.Services.Add(new ServiceDescriptor(typeof(IProductCategoryGetRepository), typeof(ProductCategoryGetRepository), ServiceLifetime.Transient));
@@ -155,11 +174,53 @@ builder.Services.Add(new ServiceDescriptor(typeof(IOrderAddressInsertService), t
 
 
 
+builder.Services.Add(new ServiceDescriptor(typeof(IUserGetRepository), typeof(UserGetRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserGetService), typeof(UserGetService), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserUpdateRepository), typeof(UserUpdateRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserUpdateService), typeof(UserUpdateService), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserDeleteRepository), typeof(UserDeleteRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserDeleteService), typeof(UserDeleteService), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserInsertRepository), typeof(UserInsertRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserInsertService), typeof(UserInsertService), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserAuthenticateRepository), typeof(UserAuthenticateRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserAuthenticateService), typeof(UserAuthenticateService), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserTokenHandlerRepository), typeof(UserTokenHandlerRepository), ServiceLifetime.Transient));
+builder.Services.Add(new ServiceDescriptor(typeof(IUserTokenHandlerService), typeof(UserTokenHandlerService), ServiceLifetime.Transient));
+
+
+
+
+
 
 
 
 builder.Services.AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Program>());
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+{
+    ValidateIssuer = true,
+    ValidateAudience = true,
+    ValidateLifetime = true,
+    ValidateIssuerSigningKey = true,
+    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+    ValidAudience = builder.Configuration["Jwt:Audience"],
+    IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+
+
+});
+
+var ibuilder = builder.Services.AddIdentityCore<User>(opt=> {
+    opt.Password.RequireDigit = false;
+    opt.Password.RequiredLength = 4;
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequireUppercase = false;
+});
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<KitchenStory_UserDBContext>();
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -170,6 +231,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

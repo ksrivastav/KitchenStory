@@ -6,11 +6,13 @@ using AutoMapper;
 using KitchenStoryWebAPI.DTO.OrderContactDetail;
 using KitchenStoryCore.CoreServices.Contracts.OrderContracts;
 using KitchenStoryCore.CoreServices.Contracts.OrderAddressContracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KitchenStoryWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class OrderContactDetailController : Controller
     {
         private readonly IOrderContactDetailGetService OrderContactDetailGetService;
